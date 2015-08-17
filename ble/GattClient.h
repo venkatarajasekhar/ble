@@ -23,8 +23,8 @@
 
 #include "GattCallbackParamTypes.h"
 
-class GattClient {
-public:
+struct GattClient {
+
     typedef void (*ReadCallback_t)(const GattReadCallbackParams *params);
 
     enum WriteOp_t {
@@ -39,7 +39,7 @@ public:
     /*
      * The following functions are meant to be overridden in the platform-specific sub-class.
      */
-public:
+
     /**
      * Launch service discovery. Once launched, application callbacks will be
      * invoked for matching services/characteristics. isServiceDiscoveryActive()
@@ -239,7 +239,7 @@ public:
     }
 
     /* Event callback handlers. */
-public:
+
     /**
      * Setup a callback for read response events.
      */
@@ -290,7 +290,7 @@ protected:
     }
 
     /* Entry points for the underlying stack to report events back to the user. */
-public:
+
     void processReadResponse(const GattReadCallbackParams *params) {
         if (onDataReadCallback) {
             onDataReadCallback(params);
