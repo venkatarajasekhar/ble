@@ -36,6 +36,7 @@ public:
         uint8_t _notify          :1; /**< Notications of the value permitted. */
         uint8_t _indicate        :1; /**< Indications of the value permitted. */
         uint8_t _authSignedWrite :1; /**< Writing the value with Signed Write Command permitted. */
+    };
 
     public:
         bool broadcast(void)       const {return _broadcast;      }
@@ -135,10 +136,7 @@ public:
      */
     ble_error_t write(uint16_t length, const uint8_t *value) const;
 
-    void setupLongUUID(UUID::LongUUIDBytes_t longUUID) {
-        uuid.setupLong(longUUID);
-    }
-
+class  GattDiscoveredCharacteristic
 public:
     const UUID& getUUID(void) const {
         return uuid;
