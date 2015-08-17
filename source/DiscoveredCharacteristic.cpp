@@ -64,3 +64,26 @@ DiscoveredCharacteristic::discoverDescriptors(DescriptorCallback_t callback, con
 {
     return BLE_ERROR_NOT_IMPLEMENTED; /* TODO: this needs to be filled in. */
 }
+
+ void setupLongUUID(UUID::LongUUIDBytes_t longUUID) {
+        uuid.setupLong(longUUID);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
